@@ -14,7 +14,7 @@
   '''
 ### Importing specific .bib file
   To import a given .bib file, if you're in nvim, press F7 to open ToggleTerm, and then run
-  '''
+  ''
    curl 'https://raw.githubusercontent.com/AutumnKeesbury/Bibliographies/refs/heads/main/example.bib' > ref.bib
-  '''
+  ''
   but replacing 'example.bib' with the name of the .bib file.
