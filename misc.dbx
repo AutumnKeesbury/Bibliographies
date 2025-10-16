@@ -1,0 +1,49 @@
+\usepackage{xpatch}
+
+% Customize the misc driver to include archive fields
+\xpatchbibdriver{misc}
+  {\usebibmacro{note+pages}}
+  {\usebibmacro{note+pages}%
+   \usebibmacro{archive-fields}}
+  {}
+  {\typeout{Failed to patch misc driver}}
+
+% Define the archive fields macro
+\newbibmacro{archive-fields}{%
+  \iffieldundef{reel}{}{%
+    \newunit\newblock
+    \printtext{Reel: \printfield{reel}}%
+  }%
+  \iffieldundef{frame}{}{%
+    \newunit\newblock
+    \printtext{Frame: \printfield{frame}}%
+  }%
+  \iffieldundef{index}{}{%
+    \newunit\newblock
+    \printtext{Index: \printfield{index}}%
+  }%
+  \iffieldundef{scanned}{}{%
+    \newunit\newblock
+    \printtext{Scanned: \printfield{scanned}}%
+  }%
+  \iffieldundef{roll}{}{%
+    \newunit\newblock
+    \printtext{Roll: \printfield{roll}}%
+  }%
+  \iffieldundef{return}{}{%
+    \newunit\newblock
+    \printtext{Return: \printfield{return}}%
+  }%
+  \iffieldundef{regiment}{}{%
+    \newunit\newblock
+    \printtext{Regiment: \printfield{regiment}}%
+  }%
+  \iffieldundef{department}{}{%
+    \newunit\newblock
+    \printtext{Department: \printfield{department}}%
+  }%
+  \iffieldundef{location}{}{%
+    \newunit\newblock
+    \printtext{Location: \printfield{location}}%
+  }%
+}
